@@ -6,9 +6,7 @@ import { Id } from '@cdktf/provider-random/lib/id'
 export class Demo extends TerraformStack {
     constructor (scope: Construct, name: string) {
         super(scope, name)
-
         new RandomProvider(this, 'random')
-
         new Id(this, 'id', {
             keepers: {
                 first: Fn.timestamp()
