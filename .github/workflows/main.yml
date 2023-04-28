@@ -1,0 +1,19 @@
+
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+
+jobs:
+  apply:
+    name: Apply
+    uses: ./.github/workflows/cdktf.yaml
+    with:
+      mode: auto-approve-apply
+      stack: demo
+      working-dir: .
+    secrets: inherit
